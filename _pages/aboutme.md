@@ -7,8 +7,6 @@ redirect_from:
   - /aboutme.html
 ---
 
-About Me
-======
 I am **Yen-Chung Hung**, PhD in Applied Mathematics. 
 
 My research focuses on **mathematical modeling and numerical fluid mechanics**, especially in **breaking waves**, **hyperbolic and dispersive models**, **depth-averaged models**, and **hydro-morphodynamic coupling**. I am dedicated to deriving mathematical models for nearshore currents and investigating their impacts on coastal morphological evolution.
