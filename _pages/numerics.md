@@ -110,7 +110,7 @@ To solve numerically the system of partial differential equations (PDEs), I impl
   \begin{aligned}
       &\frac{\partial h}{\partial t}+\frac{\partial hU}{\partial x} = 0\\
       &\frac{\partial hU}{\partial t}+\frac{\partial}{\partial x}\left(hU^2+\frac{gh^2}{2}+h^3\varphi+hP\right)= {\color{red}{\frac{\partial}{\partial x}\left(2\nu_T(\varphi)h\frac{\partial U}{\partial x}\right)}}-gh\frac{\partial b}{\partial x}\\
-      &\frac{\partial hW^\ast}{\partial t}+\frac{\partial hUW^\ast}{\partial x} = \frac{3}{2}P{\color{red}{+3\frac{\nu_T}{\alpha}\frac{\partial U}{\partial x}}}+4\frac{\alpha-1}{\alpha^2}{W^{\ast}}^2+\frac{\alpha-1}{2\alpha}gh^2\frac{\partial S}{\partial x}\\
+      &\frac{\partial hW^\ast}{\partial t}+\frac{\partial hUW^\ast}{\partial x} = \frac{3}{2}P{\color{red}{+3\frac{\nu_T(\varphi)}{\alpha}\frac{\partial U}{\partial x}}}+4\frac{\alpha-1}{\alpha^2}{W^{\ast}}^2+\frac{\alpha-1}{2\alpha}gh^2\frac{\partial S}{\partial x}\\
       &\frac{\partial hP}{\partial t}+\frac{\partial hUP}{\partial x} = -a_c^2\left(\alpha h\frac{\partial U}{\partial x}+2W^\ast\right)\\
 	  &\frac{\partial hS}{\partial t}+\frac{\partial hUS}{\partial x} = 2h\frac{\partial W^\ast}{\partial x}+\frac{2}{\alpha}W^\ast S\\
       &\frac{\partial h\varphi}{\partial t}+\frac{\partial hU\varphi}{\partial x} = -\frac{2}{h}\langle P^r\rangle(\varphi)\color{red}{+\frac{4\nu_T(\varphi)}{h}\left(\frac{\partial U}{\partial x}\right)^2-\frac{8\nu_T(\varphi)W}{\alpha^2h^2}\frac{\partial U}{\partial x}} \\
