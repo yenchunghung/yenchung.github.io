@@ -37,13 +37,13 @@ $$
 * $$\langle P^r\rangle$$: Energy dissipation due to wave breaking.
 * $$\nu_T$$: Turbulent viscosity.
 
-*Note: $\langle P^r\rangle$ and $\nu_T$ are functions of enstrophy $\varphi$.*
+*Note: $$\langle P^r\rangle = \langle P^r\rangle(\varphi)$$ and $$\nu_T = \nu_T(\varphi)$$ are functions of enstrophy $$\varphi$$.*
 
 ---
 
 ### 2. Improved Dispersive Properties
 
-The dispersive properties is improved adapting the method of **Bonneton et al. (2011)**, where instead of the depth-averaged vertical velocity, one uses 
+The dispersive properties is improved adapting the method of **Bonneton et al., 2011**, where instead of the depth-averaged vertical velocity, one uses 
 <center>
 	$$W^\ast = w\vert_{z=b+\frac{\alpha}{2}h}$$.
 </center>
@@ -64,7 +64,7 @@ $$
 </center>
 **Where:**
 * $$S$$: Analogue to the gradient of $$Z$$.
-* $$\alpha$$: A constant affecting the dispersive properties (an optimal value of $1.159$ was found by Bonneton et al., 2011).
+* $$\alpha$$: A constant affecting the dispersive properties (an optimal value of $$1.159$$ was found by Bonneton et al., 2011).
 
 ---
 
@@ -73,3 +73,60 @@ To solve numerically the system of partial differential equations (PDEs), I impl
 * **Spatial Discretization:** Monotone Upstream Centered Scheme for Conservation Laws (MUSCL) with Rusanov flux and without slope limiter.
 * **Temporal Integration:** Diagonally-implicit Runge-Kutta (DIRK) Implicit-Explicit (IMEX) ARS2(2,2,2) for second-order time accuracy.
 * **Well-Balanced Property:** Ensuring the scheme preserves the "lake-at-rest" steady state over complex, non-flat bathymetry.
+* **Treatment of breaking:** A novel breaking criterion related to the enstrophy was proposed by **Kazakova & Richard, 2019**, where a variable analogous to the enstrophy, called the virtual enstrophy $$\psi$$, is solved by an identical enstrophy equation in parallel with the original equations, to avoid introducing sudden strong discontinuity to the system when breaking happens. When breaking doesn't happen/happen(I want a toggle here), the model solves
+<div style="text-align: center; margin: 20px 0;">
+  <div style="display: inline-block; background: #f1f1f1; padding: 10px 20px; border-radius: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <span style="font-weight: bold; margin-right: 15px;">Current State:</span>
+    <label style="cursor: pointer; margin-right: 10px;">
+      <input type="radio" name="breaking-toggle" onclick="toggleBreaking('no')" checked> No Breaking
+    </label>
+    <label style="cursor: pointer;">
+      <input type="radio" name="breaking-toggle" onclick="toggleBreaking('yes')"> Breaking Occurs
+    </label>
+  </div>
+</div>
+
+<div id="eq-no-breaking" style="display: block; background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee;">
+  <p align="center"><i>During propagation (No breaking): $\varphi$ remains zero or constant while $\psi$ tracks the potential breaking intensity.</i></p>
+  $$
+  \begin{aligned}
+      &\frac{\partial h}{\partial t}+\frac{\partial hU}{\partial x} = 0\\
+      &\frac{\partial hU}{\partial t}+\frac{\partial}{\partial x}\left(hU^2+\dots+hP\right)= \dots \\
+      &\dots \\
+      &\frac{\partial h\varphi}{\partial t}+\frac{\partial hU\varphi}{\partial x} = 0 \quad \color{red}{\text{(No Source)}} \\
+      &\frac{\partial h\psi}{\partial t}+\frac{\partial hU\psi}{\partial x} = -\frac{2}{h}\langle P^r\rangle(\psi)+\frac{4\nu_T(\psi)}{h}\left(\frac{\partial U}{\partial x}\right)^2-\frac{8\nu_T(\psi)W}{\alpha^2h^2}\frac{\partial U}{\partial x}
+  \end{aligned}
+  $$
+</div>
+
+<div id="eq-breaking" style="display: none; background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee;">
+  <p align="center"><i>During Breaking: The production terms are activated for $\varphi$ to dissipate energy.</i></p>
+  $$
+  \begin{aligned}
+      &\frac{\partial h}{\partial t}+\frac{\partial hU}{\partial x} = 0\\
+      &\frac{\partial hU}{\partial t}+\frac{\partial}{\partial x}\left(hU^2+\dots+hP\right)= \dots \\
+      &\dots \\
+      &\frac{\partial h\varphi}{\partial t}+\frac{\partial hU\varphi}{\partial x} = -\frac{2}{h}\langle P^r\rangle(\varphi)+\frac{4\nu_T(\varphi)}{h}\left(\frac{\partial U}{\partial x}\right)^2-\frac{8\nu_T(\varphi)W}{\alpha^2h^2}\frac{\partial U}{\partial x} \\
+      &\frac{\partial h\psi}{\partial t}+\frac{\partial hU\psi}{\partial x} = -\frac{2}{h}\langle P^r\rangle(\psi)+\frac{4\nu_T(\psi)}{h}\left(\frac{\partial U}{\partial x}\right)^2-\frac{8\nu_T(\psi)W}{\alpha^2h^2}\frac{\partial U}{\partial x}
+  \end{aligned}
+  $$
+</div>
+
+<script>
+function toggleBreaking(state) {
+  const noBreak = document.getElementById('eq-no-breaking');
+  const yesBreak = document.getElementById('eq-breaking');
+  if (state === 'no') {
+    noBreak.style.display = 'block';
+    yesBreak.style.display = 'none';
+  } else {
+    noBreak.style.display = 'none';
+    yesBreak.style.display = 'block';
+  }
+}
+</script>
+
+---
+
+### 4. Breaking criteria
+
