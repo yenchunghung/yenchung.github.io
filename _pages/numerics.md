@@ -73,18 +73,20 @@ To solve numerically the system of partial differential equations (PDEs), I impl
 * **Spatial Discretization:** Monotone Upstream Centered Scheme for Conservation Laws (MUSCL) with Rusanov flux and without slope limiter.
 * **Temporal Integration:** Diagonally-implicit Runge-Kutta (DIRK) Implicit-Explicit (IMEX) ARS2(2,2,2) for second-order time accuracy.
 * **Well-Balanced Property:** Ensuring the scheme preserves the "lake-at-rest" steady state over complex, non-flat bathymetry.
-* **Treatment of breaking:** A novel breaking criterion related to the enstrophy was proposed by **Kazakova & Richard, 2019**, where a variable analogous to the enstrophy, called the virtual enstrophy $$\psi$$, is solved by an identical enstrophy equation in parallel with the original equations, to avoid introducing sudden strong discontinuity to the system when breaking happens.\\
+* **Treatment of breaking:** A novel breaking criterion related to the enstrophy was proposed by **Kazakova & Richard, 2019**, where a variable analogous to the enstrophy, called the virtual enstrophy $$\psi$$, is solved by an identical enstrophy equation in parallel with the original equations, to avoid introducing sudden strong discontinuity to the system when breaking happens.
 <p>
-When there is
-<span style="display: inline-block; background: #f9f9f9; padding: 2px 10px; border-radius: 20px; border: 1px solid #ddd; vertical-align: middle; white-space: nowrap;">
-    <label style="display: inline-block; cursor: pointer; font-size: 0.9em; margin-right: 12px; margin-bottom: 0;">
-      <input type="radio" name="breaking-toggle" onclick="toggleBreaking('no')" checked style="vertical-align: middle;"> no breaking
+  When there is 
+  <span style="display: inline-block; background: #f9f9f9; padding: 4px 12px; border-radius: 20px; border: 1px solid #ddd; vertical-align: middle; white-space: nowrap;">
+    <label style="display: inline-flex !important; align-items: center; cursor: pointer; font-size: 0.9em; margin-right: 15px; margin-bottom: 0; border: none;">
+      <input type="radio" name="breaking-toggle" onclick="toggleBreaking('no')" checked style="display: inline-block !important; width: auto; margin: 0 5px 0 0; vertical-align: middle;">
+      no breaking/
     </label>
     
-    <label style="display: inline-block; cursor: pointer; font-size: 0.9em; margin-bottom: 0;">
-      <input type="radio" name="breaking-toggle" onclick="toggleBreaking('yes')" style="vertical-align: middle;"> breaking
+    <label style="display: inline-flex !important; align-items: center; cursor: pointer; font-size: 0.9em; margin-bottom: 0; border: none;">
+      <input type="radio" name="breaking-toggle" onclick="toggleBreaking('yes')" style="display: inline-block !important; width: auto; margin: 0 5px 0 0; vertical-align: middle;">
+      breaking
     </label>
-  </span>, the model solves
+  </span>, the model solves:
 </p>
 
 <div id="eq-no-breaking" style="display: block; background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee;">
