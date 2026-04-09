@@ -139,7 +139,7 @@ function toggleBreaking(state) {
 
 To accurately determine the breaking zone, a revised breaking criterion is implemented based on the transition between two state-dependent quantities:
 <center>
-	$$\widetilde{\psi_\eta} := \frac{\psi\max(0,\eta)}{g}$$ and $$\widetilde{\psi_h} := \frac{\psi h}{g}$$
+	\(\widetilde{\psi_\eta} := \frac{\psi\max(0,\eta)}{g}\) and \(\widetilde{\psi_h} := \frac{\psi h}{g}\)
 </center>
 The triggering mechanism is governed by two threshold constants, \(\psi_0 > \psi_1 \geq 0\), which define the activation and deactivation phases:
 
@@ -150,7 +150,7 @@ Furthermore, the location of turbulence generation and vortex generation for a p
 <center>
 $$\nu_T = 0 \quad \text{if} \quad
 \begin{cases}
-W < 0 & \text{(Weakly Dispersive Model)} \
+W < 0 & \text{(Weakly Dispersive Model)} \\
 W^\ast < 0 & \text{(Improved Dispersive Model)}
 \end{cases}$$
 </center>
