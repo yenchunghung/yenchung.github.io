@@ -137,7 +137,7 @@ function toggleBreaking(state) {
 
 ### 4. Breaking criterion
 
-To accurately determine the breaking zone, a revised breaking criterion is implemented based on the transition between two state-dependent quantities:
+To accurately determine the breaking zone, a revised breaking criterion is implemented to the 1D model based on the transition between two state-dependent quantities:
 <center>
 	\(\widetilde{\psi_\eta} := \dfrac{\psi\max(0,\eta)}{g}\) and \(\widetilde{\psi_h} := \dfrac{\psi h}{g}\)
 </center>
