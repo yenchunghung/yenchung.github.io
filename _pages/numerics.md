@@ -8,9 +8,9 @@ author_profile: true
 {% include base_path %}
 
 ## Mathematical Framework & Numerical Methods
+The following simulations are based on **depth-averaged models** that account for both dispersive effects and energy dissipation during wave breaking.
 
 ### 1. The Dispersive-Hyperbolic Model
-The following simulations are based on **depth-averaged models** that account for both dispersive effects and energy dissipation during wave breaking.
 <details markdown="1">
 <summary style="cursor: pointer; color: #007bff; font-weight: bold;">
   Click to view Governing Equations & Variable Definitions
@@ -53,7 +53,13 @@ $$
 ---
 
 ### 2. Improved Dispersive Properties
+<details markdown="1">
+<summary style="cursor: pointer; color: #007bff; font-weight: bold;">
+  Click to view the model with improved dispersive properties
+</summary>
 
+<div style="margin-top: 15px; border-left: 3px solid #007bff; padding-left: 15px;" markdown="1">
+	
 The dispersive properties is improved adapting the method of **Bonneton et al., 2011**, where instead of the depth-averaged vertical velocity, one uses 
 <center>
 	$$W^\ast = w\vert_{z=b+\frac{\alpha}{2}h}$$.
@@ -77,9 +83,19 @@ $$
 * $$S$$: Analogue to the gradient of $$Z$$.
 * $$\alpha$$: A constant affecting the dispersive properties (an optimal value of $$1.159$$ was found by Bonneton et al., 2011).
 
+</div>
+</details>
+
 ---
 
 ### 3. Numerical Implementation
+<details markdown="1">
+<summary style="cursor: pointer; color: #007bff; font-weight: bold;">
+  Click to view Numerical methods & Treatment of breaking
+</summary>
+
+<div style="margin-top: 15px; border-left: 3px solid #007bff; padding-left: 15px;" markdown="1">
+
 To solve numerically the system of partial differential equations (PDEs), I implement second-order schemes designed for conservation laws:
 * **Spatial Discretization:** Monotone Upstream Centered Scheme for Conservation Laws (MUSCL) with Rusanov flux and without slope limiter.
 * **Temporal Integration:** Diagonally-implicit Runge-Kutta (DIRK) Implicit-Explicit (IMEX) ARS2(2,2,2) for second-order time accuracy.
@@ -144,10 +160,19 @@ function toggleBreaking(state) {
 }
 </script>
 
+</div>
+</details>
+
 ---
 
 ### 4. Breaking criterion
+<details markdown="1">
+<summary style="cursor: pointer; color: #007bff; font-weight: bold;">
+  Click to view Breaking criterion
+</summary>
 
+<div style="margin-top: 15px; border-left: 3px solid #007bff; padding-left: 15px;" markdown="1">
+	
 To accurately determine the breaking zone, a revised breaking criterion is implemented to the 1D model based on the transition between two state-dependent quantities:
 <center>
 	\(\widetilde{\psi_\eta} := \dfrac{\psi\max(0,\eta)}{g}\) and \(\widetilde{\psi_h} := \dfrac{\psi h}{g}\)
@@ -165,3 +190,6 @@ W < 0 & \text{(Weakly Dispersive Model)} \\
 W^\ast < 0 & \text{(Improved Dispersive Model)}
 \end{cases}$$
 </center>
+
+</div>
+</details>
