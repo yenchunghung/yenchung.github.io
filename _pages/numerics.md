@@ -17,8 +17,9 @@ author_profile: true
     top: 80px;       /* 距離螢幕頂部的高度 */
     right: 0;          /* 緊貼右側邊緣 */
     width: 150px;      /* 展開時的寬度 */
-    background: white;
-    border: 1px solid #ddd;
+    background: var(--background-color, white); /* 如果變數不存在，預設為 white */
+  	color: var(--text-color, #333);
+  	border: 1px solid var(--border-color, #ddd);
     border-radius: 8px 0 0 8px; /* 左側圓角 */
     box-shadow: -2px 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;     /* 確保在所有內容最上方 */
