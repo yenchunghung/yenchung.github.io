@@ -3,6 +3,10 @@ layout: archive
 title: "Numerics & Simulations"
 permalink: /numerics/
 author_profile: true
+toc: true
+toc_label: "Quick Navigation"
+toc_icon: "list"
+toc_sticky: true
 ---
 
 {% include base_path %}
