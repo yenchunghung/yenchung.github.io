@@ -59,11 +59,11 @@ author_profile: true
   /* triangle icon */
   #toggle-icon {
     transition: transform 0.3s ease;
-    transform: rotate(180deg); /* 預設展開時箭頭向右 */
+    transform: rotate(0deg); /* 預設展開時箭頭向右 */
   }
 
   #side-nav.minimized #toggle-icon {
-    transform: rotate(0deg); /* 收納時箭頭向左 */
+    transform: rotate(180deg); /* 收納時箭頭向左 */
   }
 
   /* 目錄清單樣式 */
