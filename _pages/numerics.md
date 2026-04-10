@@ -146,7 +146,7 @@ The triggering mechanism is governed by two threshold constants, $$\psi_0 > \psi
 * **Activation**: Breaking is initiated when $$\widetilde{\psi_\eta} > \psi_0$$.
 * **Persistence**: Once active, the breaking state is maintained as long as $$\widetilde{\psi_h} > \psi_1$$.
   
-Furthermore, the location of turbulence generation and vortex generation for a plunging breaker is mainly in the front part of the wave. To ensure the numerical model reflects this spatial localization, a constraint is applied:
+Furthermore, the location of turbulence generation and vortex generation for a plunging breaker is mainly in the front part of the wave. To ensure the numerical model reflects this spatial localization, a constraint is applied to the breaking zone:
 <center>
 $$\nu_T = 0 \quad \text{if} \quad
 \begin{cases}
