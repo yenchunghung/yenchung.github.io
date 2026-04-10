@@ -118,8 +118,8 @@ author_profile: true
 
   html[data-theme='dark'] #eq-no-breaking, 
   html[data-theme='dark'] #eq-breaking {
-  background: #1e1e1e !important;
-  border: 1px solid #333 !important;
+  background: #474747 !important;
+  border: 1px solid #a6a6a6 !important;
   }
 </style>
 
