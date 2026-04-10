@@ -120,7 +120,6 @@ author_profile: true
   }
 </style>
 
-/* Main content of the sidebar */
 <div id="side-nav">
   	<div id="nav-toggle-tab" onclick="toggleSideNav()" title="Toggle Navigation">
     	<span id="toggle-icon">
