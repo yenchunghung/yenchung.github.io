@@ -9,12 +9,12 @@ author_profile: true
 
 <style>
   html { scroll-behavior: smooth; }
-  h2, h3 { scroll-margin-top: 100px; } /* 跳轉後上方留白，避免被 Header 遮住 */
+  h2, h3 { scroll-margin-top: 80px; } /* 跳轉後上方留白，避免被 Header 遮住 */
 
   /* 目錄主容器 */
   #side-nav {
     position: fixed; /* 固定在螢幕上，不隨頁面捲動消失 */
-    top: 150px;       /* 距離螢幕頂部的高度 */
+    top: 80px;       /* 距離螢幕頂部的高度 */
     right: 0;          /* 緊貼右側邊緣 */
     width: 150px;      /* 展開時的寬度 */
     background: white;
@@ -28,7 +28,7 @@ author_profile: true
 
   /* 最小化時的狀態：向右滑出螢幕 */
   #side-nav.minimized {
-    transform: translateX(200px); /* 滑出寬度，只露出標籤 */
+    transform: translateX(150px); /* 滑出寬度，只露出標籤 */
   }
 
   /* 內部內容區塊 */
@@ -40,12 +40,12 @@ author_profile: true
   /* --- 側邊突出的小三角形標籤 --- */
   #nav-toggle-tab {
     position: absolute;
-    left: -30px;      /* 突出在目錄左側 */
+    left: -15px;      /* 突出在目錄左側 */
     top: 50%;          /* 垂直置中 */
     transform: translateY(-50%);
-    width: 30px;       /* 標籤寬度 */
-    height: 60px;      /* 標籤高度 */
-    background: #007bff; /* 藍色背景 */
+    width: 15px;       /* 標籤寬度 */
+    height: 30px;      /* 標籤高度 */
+    background: #BABABA; 
     color: white;
     border-radius: 8px 0 0 8px; /* 左側圓角 */
     cursor: pointer;
