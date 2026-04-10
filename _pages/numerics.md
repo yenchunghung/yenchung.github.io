@@ -142,7 +142,7 @@ author_profile: true
 		  		</a>
 		  		<ul style="list-style: none; padding-left: 12px; margin-top: 5px; border-left: 1px solid #eee; font-size: 0.85em;">
           			<li style="margin-bottom: 5px;">
-            			<a href="#1-breaking-solitary-wave-propagation-over-flat-bed" style="text-decoration: none; color: #999;">
+            			<a href="#1-solitary-wave-propagation-over-flat-bed" style="text-decoration: none; color: #999;">
 							Solitary Wave (Flat Bed)
 						</a>
             		</li>
@@ -360,9 +360,29 @@ W^\ast < 0 & \text{(Improved Dispersive Model)}
 </details>
 
 ## Simulations (Under construction)
-The following simulations are based on either the weakly dispersive model or the improved dispersive model.
+The following simulations are based on the improved dispersive model.
 
-### 1. Breaking solitary wave propagation over flat bed
+### 1. Solitary wave propagation over flat bed
+In the experiment of Watanabe et al. (2001), the physical limit of solitary wave stability was investigated to determine the critical non-linearity at which a wave begins to break. The waves are characterized by the non-linearity parameter $$\mu = a/h$$, amplitude over water depth.
+
+**Case A: Stable Solitary Wave ($$\mu = 0.66$$)**
+
+<div style="text-align: center; margin: 20px 0;">
+	<img src="/images/numerics/Stable_Solitary.gif" alt="Stable Solitary Wave" loading="lazy" style="width: 85%; max-width: 800px; 	border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+	<p style="font-style: italic; color: #666; margin-top: 10px;">
+		Animation 1: Propagation of a stable solitary wave ($$\mu = 0.66$$). 
+	</p>
+</div>
+
+**Case B: Unstable Solitary Wave ($$\mu = 0.78064$$)**
+This case represents a wave exceeding the stability limit identified by Watanabe et al. Physically, such a wave is prone to spontaneous breaking due to extreme non-linearity.
+
+<div style="text-align: center; margin: 20px 0;">
+	<img src="/images/numerics/Unstable_Solitary.gif" alt="Unstable Solitary Wave" loading="lazy" style="width: 85%; max-width: 800px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+	<p style="font-style: italic; color: #666; margin-top: 10px;">
+		Animation 2: Spontaneous breaking of an unstable solitary wave ($$\mu = 0.78064$$). The breaking region, where dissipative terms are activated, is indicated by the semi-transparent red zone.
+	</p>
+</div>
 
 ### 2. Solitary wave propagation over a slope
 
