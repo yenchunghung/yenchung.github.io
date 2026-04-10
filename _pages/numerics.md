@@ -92,7 +92,7 @@ author_profile: true
   }
 
   html[data-theme='dark'] #side-nav-content strong {
-  color: #ffffff;            /* 亮灰色標題 */
+  color: #ffffff;            
   }
 
   html[data-theme='dark'] #side-nav ul li a {
@@ -115,7 +115,7 @@ author_profile: true
     <span id="toggle-icon">►</span>
   </div>
   <div id="side-nav-content">
-    <strong style="display: block; margin-bottom: 10px; color: #333; font-size: 1.1em;">Contents</strong>
+    <strong style="display: block; margin-bottom: 10px; font-size: 1.1em;">Contents</strong>
     <ul>
       <li style="margin-bottom: 5px;"><a href="#mathematical-framework--numerical-methods" style="text-decoration: none; color: 	#007bff;">Framework</a></li>
       <li style="margin-bottom: 5px;"><a href="#simulations" style="text-decoration: none; color: #007bff;">Simulations</a></li>
