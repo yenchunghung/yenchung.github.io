@@ -9,45 +9,43 @@ author_profile: true
 
 <style>
   html { scroll-behavior: smooth; }
-  h2, h3 { scroll-margin-top: 80px; } /* 跳轉後上方留白，避免被 Header 遮住 */
+  h2, h3 { scroll-margin-top: 80px; } /* Avoid the sidebar be covered by the Header */
 
-  /* 目錄主容器 */
+  /* Main part */
   #side-nav {
-    position: fixed; /* 固定在螢幕上，不隨頁面捲動消失 */
-    top: 80px;       /* 距離螢幕頂部的高度 */
-    right: 0;          /* 緊貼右側邊緣 */
-    width: 150px;      /* 展開時的寬度 */
+    position: fixed; /* move with scrolling */
+    top: 80px;       
+    right: 0;          
+    width: 150px;      
     background: white;
   	border: 1px solid #ddd;
-    border-radius: 8px 0 0 8px; /* 左側圓角 */
+    border-radius: 8px 0 0 8px; /* round corner */
     box-shadow: -2px 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;     /* 確保在所有內容最上方 */
-    transition: transform 0.3s ease; /* 滑動動畫 */
-    transform: translateX(0); /* 預設狀態：展開 */
+    z-index: 1000;     /* highest priority */
+    transition: transform 0.3s ease; /* animation */
+    transform: translateX(0); /* default: expand */
   }
 
-  /* 最小化時的狀態：向右滑出螢幕 */
   #side-nav.minimized {
-    transform: translateX(150px); /* 滑出寬度，只露出標籤 */
+    transform: translateX(150px);
   }
 
-  /* 內部內容區塊 */
   #side-nav-content {
     padding: 15px;
     overflow: hidden;
   }
 
-  /* --- 側邊突出的小三角形標籤 --- */
+  /* --- Triangle toggle tab --- */
   #nav-toggle-tab {
     position: absolute;
-    left: -15px;      /* 突出在目錄左側 */
-    top: 50%;          /* 垂直置中 */
+    left: -15px;      /* left side of the menu */
+    top: 50%;          /* centering */
     transform: translateY(-50%);
-    width: 15px;       /* 標籤寬度 */
-    height: 40px;      /* 標籤高度 */
+    width: 15px;       
+    height: 40px;      
     background: #BABABA; 
     color: white;
-    border-radius: 8px 0 0 8px; /* 左側圓角 */
+    border-radius: 8px 0 0 8px; 
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -59,14 +57,13 @@ author_profile: true
   /* triangle icon */
   #toggle-icon {
     transition: transform 0.3s ease;
-    transform: rotate(0deg); /* 預設展開時箭頭向右 */
+    transform: rotate(0deg); 
   }
 
   #side-nav.minimized #toggle-icon {
-    transform: rotate(180deg); /* 收納時箭頭向左 */
+    transform: rotate(180deg); 
   }
 
-  /* 目錄清單樣式 */
   #side-nav ul {
     list-style: none;
     padding: 0;
@@ -86,8 +83,8 @@ author_profile: true
   }
 
   html[data-theme='dark'] #side-nav {
-  background: #1e1e1e;       /* 深色背景 */
-  border-color: #333;        /* 較暗的邊框 */
+  background: #1e1e1e;       
+  border-color: #333;        
   box-shadow: -2px 2px 10px rgba(0,0,0,0.5);
   }
 
@@ -96,7 +93,7 @@ author_profile: true
   }
 
   html[data-theme='dark'] #side-nav ul li a {
-  color: #bbbbbb;            /* 亮灰色文字 */
+  color: #bbbbbb;           
   }
 
   html[data-theme='dark'] #side-nav ul li a:hover {
@@ -123,19 +120,51 @@ author_profile: true
   }
 </style>
 
+/* Main content of the sidebar */
 <div id="side-nav">
-  <div id="nav-toggle-tab" onclick="toggleSideNav()" title="Toggle Navigation">
-    <span id="toggle-icon">►</span>
-  </div>
-  <div id="side-nav-content">
-    <strong style="display: block; margin-bottom: 10px; font-size: 1.1em;">Contents</strong>
-    <ul>
-      <li style="margin-bottom: 5px;"><a href="#mathematical-framework--numerical-methods" style="text-decoration: none; color: 	#007bff;">Framework</a></li>
-      <li style="margin-bottom: 5px;"><a href="#simulations" style="text-decoration: none; color: #007bff;">Simulations</a></li>
-      </ul>
-  	<hr style="margin: 10px 0; border: 0; border-top: 1px solid #eee;">
-  	<a href="#" style="font-size: 0.8em; color: #999; text-decoration: none;">↑ Back to Top</a>
-  </div>
+  	<div id="nav-toggle-tab" onclick="toggleSideNav()" title="Toggle Navigation">
+    	<span id="toggle-icon">
+			►
+		</span>
+ 	</div>
+  	<div id="side-nav-content">
+    	<strong style="display: block; margin-bottom: 10px; font-size: 1.1em;">
+			Contents
+		</strong>
+    	<ul>
+      		<li style="margin-bottom: 5px;">
+		  		<a href="#mathematical-framework--numerical-methods" style="text-decoration: none; color: #007bff;">
+			  		Framework
+		  		</a>
+	  		</li>
+      		<li style="margin-bottom: 5px;">
+		  		<a href="#simulations" style="text-decoration: none; color: #007bff;">
+			  		Simulations
+		  		</a>
+		  		<ul style="list-style: none; padding-left: 12px; margin-top: 5px; border-left: 1px solid #eee; font-size: 0.85em;">
+          			<li style="margin-bottom: 5px;">
+            			<a href="#1-breaking-solitary-wave-propagation-over-flat-bed" style="text-decoration: none; color: #666;">
+							Solitary Wave (Flat Bed)
+						</a>
+            		</li>
+            		<li style="margin-bottom: 5px;">
+            			<a href="#2-solitary-wave-propagation-over-a-slope" style="text-decoration: none; color: #666;">
+							Solitary Wave (Slope)
+						</a>
+            		</li>
+            		<li style="margin-bottom: 5px;">
+            			<a href="#3-wavetrain-propagation" style="text-decoration: none; color: #666;">
+							Wave Train
+						</a>
+            		</li>
+          		</ul>
+	  		</li>
+    	</ul>  
+  		<hr style="margin: 10px 0; border: 0; border-top: 1px solid #eee;">
+  		<a href="#" style="font-size: 0.8em; color: #999; text-decoration: none;">
+			↑ Back to Top
+		</a>
+  	</div>
 </div>
 
 <script>
@@ -146,7 +175,6 @@ function toggleSideNav() {
 </script>
 
 ## Mathematical Framework & Numerical Methods
-The following simulations are based on **depth-averaged models** that account for both dispersive effects and energy dissipation during wave breaking.
 
 ### 1. The Dispersive-Hyperbolic Model
 <details markdown="1">
@@ -332,4 +360,11 @@ W^\ast < 0 & \text{(Improved Dispersive Model)}
 </div>
 </details>
 
-## Simulations
+## Simulations (Under construction)
+The following simulations are based on either the weakly dispersive model or the improved dispersive model.
+
+### 1. Breaking solitary wave propagation over flat bed
+
+### 2. Solitary wave propagation over a slope
+
+### 3. Wavetrain propagation
