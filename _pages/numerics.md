@@ -120,7 +120,12 @@ author_profile: true
   }
 
   video {
-	  cursor: pointer;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  video:active {
+    opacity: 0.8;
   }
 </style>
 
@@ -401,26 +406,37 @@ This case represents a wave exceeding the stability limit identified by Watanabe
 </div>
 
 <script>
-  const videoIds = ['stable-sim-vid', 'unstable-sim-vid'];
+	function setupSimulationVideos() {
+  		const videoIds = ['stable-sim-vid', 'unstable-sim-vid'];
 
-  videoIds.forEach(id => {
-    const vid = document.getElementById(id);
-    if (vid) {
-      // Set initial play speed
-      vid.playbackRate = 0.75;
+		videoIds.forEach(id => {
+		    const vid = document.getElementById(id);
+		    if (vid) {
+		    	// Set initial play speed
+		      	vid.playbackRate = 0.75;
 
-      // Click to restart animation
-      vid.addEventListener('click', function() {
-        this.currentTime = 0;
-        this.play();
-      });
+			    // Click to restart animation
+				vid.addEventListener('click', function(e) {
+		          	e.preventDefault();
+		          
+		          	console.log('Video ' + id + ' clicked. Restarting...'); // debugging use
+		          	this.currentTime = 0;
+		          	this.play();
+		        }, false);
 
-      // Make sure the play speed maintains
-      vid.addEventListener('play', function() {
-        this.playbackRate = 0.75;
-      });
-    }
-  });
+      			// Make sure the play speed maintains
+      			vid.addEventListener('play', function() {
+        			this.playbackRate = 0.75;
+      			});
+    		}
+  		});
+	}
+
+	if (document.readyState === 'loading') {
+	    document.addEventListener('DOMContentLoaded', setupSimulationVideos);
+	} else {
+		setupSimulationVideos();
+	  }
 </script>
 
 ### 2. Solitary wave propagation over a slope
