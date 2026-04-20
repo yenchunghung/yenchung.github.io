@@ -394,7 +394,7 @@ In the experiment of **Watanabe et al., 2001**, the physical limit of solitary w
     Your browser does not support the video tag.
   </video>
   <p style="font-style: italic; color: #666; margin-top: 10px; padding: 0 10%;">
-    Animation 2: Spontaneous breaking of an unstable solitary wave (\(\mu = 0.78064\)). The breaking region, where dissipative terms are activated, is indicated by the translucent red zone.
+    Animation 2: Spontaneous breaking of an unstable solitary wave (\(\mu = 0.78064\)). The zone where the activation criterion is met is indicated by the translucent red zone. The true breaking region, where dissipative terms are activated, is much narrower and localized at the wave front.
   </p>
 </div>
 
