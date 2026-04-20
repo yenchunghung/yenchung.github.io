@@ -442,7 +442,7 @@ The time series of free surface elevation at the six gauge points are shown in t
   </p>
 </div>
 
-The second case focuses on the experiment of **Beji \& Battjes, 1993**, in which regular sinusoidal and irregular wave trains are generated and propagate over a submerged bar. The regular sinusoidal wave train with period $$T = 2.5$$ s and amplitudes $$a_\ast∗ = 0.022$$ m are generated (spilling breaker type). A 5 m sponge layer is applied on the right side of the domain to absorb outgoing waves and the incoming wave is generated on the left side as a Dirichlet boundary condition. The eight gauge locations are marked by solid vertical lines in the simulation below.
+The second case focuses on the experiment of **Beji & Battjes, 1993**, in which regular sinusoidal and irregular wave trains are generated and propagate over a submerged bar. The regular sinusoidal wave train with period $$T = 2.5$$ s and amplitudes $$a_\ast = 0.022$$ m are generated (spilling breaker type). A 5 m sponge layer is applied on the right side of the domain to absorb outgoing waves and the incoming wave is generated on the left side as a Dirichlet boundary condition. The eight gauge locations are marked by solid vertical lines in the simulation below.
 
 <div style="text-align: center; margin: 20px 0;">
   <video id="wavetrain-bejisls-sim-vid" autoplay loop muted playsinline style="width: 85%; max-width: 800px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;" title="Click to restart animation">
