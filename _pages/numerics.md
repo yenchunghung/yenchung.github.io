@@ -414,8 +414,8 @@ can be calculated. The following simulation and gauge point comparison are from 
 </div>
 
 <div style="text-align: center; margin: 30px 0;">
-<img src="/images/numerics/Hsiao_Trial41.png" alt="Gauge point comparison Trial 41" style="width: 90%; max-width: 900px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-<p style="font-style: italic; color: #666; margin-top: 10px; padding: 0 10%;">
+<img src="/images/numerics/Hsiao_Trial41.png" alt="Gauge point comparison Trial 41" style="width: 70%; max-width: 900px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+<p style="font-style: italic; color: #666; margin-top: 10px; padding: 0 15%;">
 Figure 2: Time series of free surface elevation at multiple gauge locations for Trial 41. Solid red lines represent numerical results, and black circles/lines denote experimental data.
 </p>
 </div>
