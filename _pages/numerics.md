@@ -430,7 +430,7 @@ Figure 2: Time series of free surface elevation at multiple gauge locations for 
         var vid = document.getElementById(id);
         if (vid) {
 		  if (id === 'solitary-slope-sim-vid') {
-            vid.playbackRate = 1.25; 
+            vid.playbackRate = 1.5; 
           } else {
               vid.playbackRate = 0.75;
 		  }
